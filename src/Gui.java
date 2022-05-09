@@ -16,7 +16,7 @@ public class Gui extends JPanel implements ActionListener {
     static final int tickrate =1;
     Timer timer;
     boolean running = true;
-
+    Background back = new Background();
     Player pl = new Player(WIDTH / 2 - 25, HEIGHT / 2 - 25, 0, 50);
     Gui() {
         this.setPreferredSize(SCREEN_SIZE);
@@ -106,12 +106,12 @@ public class Gui extends JPanel implements ActionListener {
             g2d.setTransform(reset);
             g2d.translate(pl.getX(),pl.getY());
             g2d.fillRect(100,100,100,100);
-            g2d.setTransform(reset);
             int x = r.nextInt((int)100);;
             g2d.setPaint(Color.WHITE);
-            for (int i= 0;i<x;i++) {
-                g2d.fillRect(r.nextInt((int)(WIDTH)),r.nextInt((int)(HEIGHT)),5,5);
+            for (Rectangle rectangle: back.stars) {
+                g2d.fill(rectangle);
             }
+            g2d.setTransform(reset);
 
         }
     }
