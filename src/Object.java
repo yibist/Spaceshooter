@@ -20,8 +20,8 @@ public class Object {
     }
     public void accelerate() {
         if (accelerate) {
-                this.setSpeedhorizontal(getSpeedhorizontal() - (Math.sin(Math.toRadians(getRotation())) * 1));
-                this.setSpeedvertical((getSpeedvertical() - (Math.cos(Math.toRadians(getRotation())) * 1)));
+                this.setSpeedhorizontal(getSpeedhorizontal() + (Math.sin(Math.toRadians(getRotation())) * 1));
+                this.setSpeedvertical((getSpeedvertical() + (Math.cos(Math.toRadians(getRotation())) * 1)));
         }
         if (decelerate) {
             this.setX(getX() + (Math.sin(Math.toRadians(getRotation()))));
